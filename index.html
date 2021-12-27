@@ -45,8 +45,10 @@
             total.innerHTML = bar.style.width;
             if(bar.style.width == "100%"){
                 window.clearTimeout(timeout);
+                console.log(123)
                 return;
             }
+
             var timeout=window.setTimeout("run()",200);
         }
         window.onload = function(){
