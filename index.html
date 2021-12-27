@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .container{
+            width:500px;
+            height:25px;
+        }
+        #bar{
+            background:#95CA0D;
+            border:0px solid #6C9C2C;
+            float:left;
+            height:25px;
+            width:100%;
+            line-height:100%;
+            margin:0px;
+        }
+        #total{
+            width:10%;
+            height:27px;
+        }
+        #outer{
+            border:1px solid #6C9C2C;
+        }
+        .ccc{
+            display: inline-block;
+        }
+        #wid{
+            width:547px;
+            height:27px;
+        }
+        #tbox{
+            height:27px;
+            float:right;
+            padding-top:1.5px;
+        }
+    </style>
+    <script type="text/javascript">
+        function run(){
+            var bar = document.getElementById("bar");
+            var total = document.getElementById("total");
+            bar.style.width=parseInt(bar.style.width) + 1 + "%";
+            total.innerHTML = bar.style.width;
+            if(bar.style.width == "100%"){
+                window.clearTimeout(timeout);
+                return;
+            }
+            var timeout=window.setTimeout("run()",200);
+        }
+        window.onload = function(){
+            run();
+        }
+    </script>
+
+</head>
+<body>
+<div id="wid" class="container ccc">
+
+    <div  id="outer" class="container ccc">
+        <span id="bar" style="width:0%;"></span>
+    </div>
+    <div id="tbox" class="ccc">
+        <div id="total"></div>
+    </div>
+
+</div>
+
+</body>
+</html>
